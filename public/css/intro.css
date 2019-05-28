@@ -1,0 +1,231 @@
+html{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+body{ 
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background-color: #000000;
+}
+#div_backHolder{
+	text-align: center;
+	animation-duration: 2s;
+	animation-name: fadeIn;
+}
+#canvas{
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+}
+#div_logoHolder{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0%;
+	margin: auto;
+	margin-top: -150px;
+	text-align: center;
+}
+hr{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	margin-top: 40px;
+	top: 50%;
+	transform-origin: bottom left;
+	animation-duration: 1.5s;
+	animation-name: wide;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+#div_lightHolder{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 50%;
+	margin-top: 20px;
+	text-align: center;
+	animation-duration: 2s;
+	animation-name: slide;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+#div_letterHolder{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 50%;
+	opacity: 0.7;
+	margin-top: 70px;
+	text-align: center;
+}
+#div_letterHolder div{
+	margin-top: -10px;
+	text-align: center; 
+	display: inline-block;
+	line-height: 60px;
+}
+#div_letterHolder div div{
+	margin: 0px 10px 0 10px;
+	opacity: 0;
+	width: 60px;
+	font-size: 40px;
+	border: 5px solid #fff;
+	border-radius: 60px;
+	color: #fff;
+	float: left;
+	vertical-align: middle;
+}
+#div_letterHolder div div:nth-of-type(1){
+	animation-duration: 1s;
+	animation-delay: 1s;
+	animation-name: apear;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+#div_letterHolder div div:nth-of-type(2){
+	animation-duration: 1s;
+	animation-delay: 1.5s;
+	animation-name: apear;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+#div_letterHolder div div:nth-of-type(3){
+	animation-duration: 1s;
+	animation-delay: 2s;
+	animation-name: apear;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+#div_letterHolder div div:nth-of-type(4){
+	animation-duration: 1s;
+	animation-delay: 2.5s;
+	animation-name: apear;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+#div_infoHolder{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 50%;
+	opacity: 0.6;
+	color: #ffffff;
+	margin-top: 140px;
+	width: 100%;
+	text-align: center;
+}
+#div_infoHolder div{
+	margin: 0px 3px 0 3px;
+	opacity: 0;
+	text-align: center;
+	display: inline-block;
+}
+#div_infoHolder div:nth-of-type(1){
+	animation-duration: 1s;
+	animation-delay: 1s;
+	animation-name: fadeIn;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+#div_infoHolder div:nth-of-type(2){
+	animation-duration: 1s;
+	animation-delay: 1.5s;
+	animation-name: fadeIn;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+#div_infoHolder div:nth-of-type(3){
+	animation-duration: 1s;
+	animation-delay: 2s;
+	animation-name: fadeIn;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+#div_infoHolder div:nth-of-type(4){
+	animation-duration: 1s;
+	animation-delay: 2.5s;
+	animation-name: fadeIn;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+#div_copyright{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 90%;
+	opacity: 0;
+	text-align: center;
+	color: #ffffff;
+	animation-duration: 2s;
+	animation-delay: 3s;
+	animation-name: fadeIn;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+@keyframes fadeIn {
+  	from 	{ opacity: 0; }
+  	to 	{ opacity: 1; }
+}
+@keyframes wide {
+  	from { 
+left: -300px;
+width: 0px;
+opacity: 0;
+	}
+  	to { 
+left: 0px;
+width: 300px; 
+opacity: 0.5; 
+	}
+}
+@keyframes slide {
+	0%	{ margin-left: -300px; }
+	75%	{ 
+	margin-left: 300px; 
+	-ms-transform: scale(1, 1);
+    	-webkit-transform: scale(1, 1);
+    	transform: scale(1, 1); 
+}
+	100%	{
+	margin-left: 300px; 
+	-ms-transform: scale(0, 0);
+    	-webkit-transform: scale(0, 0);
+    	transform: scale(0, 0); 
+}
+}
+@keyframes apear {
+	0%	{ 
+	opacity: 0;
+	-ms-transform: scale(2, 2);
+    	-webkit-transform: scale(2, 2);
+    	transform: scale(2, 2);  
+	}
+	100%	{
+	opacity: 0.6;
+	-ms-transform: scale(1, 1);
+    	-webkit-transform: scale(1, 1);
+    	transform: scale(1, 1); 
+	}
+}

@@ -1,0 +1,116 @@
+﻿html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+    link(href="http://bootstrapk.com/examples/dashboard/dashboard.css", rel="stylesheet")    
+    link(href="css/merge.css", rel="stylesheet")
+  body
+            div(class="main")
+
+                h2(class="sub-header") Myblood
+                div(class="table-responsive")
+                    form(method="get", action='/')
+
+                        table(class="table table-striped", align="center", style="table-layout:fixed")
+                            tr(align="center")
+                                th
+                                    b 혈액 ID
+                                -if(name == 'Redcross' || name == 'Hospital'){
+                                th
+                                    b 검사1
+                                th
+                                    b 검사2
+                                th
+                                    b 검사3
+                                th
+                                    b 이동
+                                th
+                                    b 수혈자 등록
+                                th
+                                    b 폐기
+                                -}
+                            -for(i in result){
+                                tr
+                                    <input type='hidden' value= #{"data"+result[i]} id= #{"data"+result[i]}>
+                                    td 
+                                        input(
+                                            type='button'
+                                            class='btn-link'
+                                            value = "blood_"+result[i]
+                                            style = "font-size:14px"
+                                            onclick= "getInfo('"+result[i]+"');"
+                                            )
+                                    -if(name == 'Redcross' || name == 'Hospital'){
+                                    <input type="hidden" class="form-control" value = #{result[i]}   id= #{"owner"+result[i]}>
+                                    td
+                                        input(
+                                            type='button'
+                                            class = "btn btn-primary"
+                                            value = "검사1"
+                                            onclick= "check1('"+result[i]+"');"
+                                            )
+                                    td 
+                                        input(
+                                            type='button'
+                                            class = "btn btn-primary"
+                                            value = "검사2"
+                                            onclick= "checkAlt('"+result[i]+"');"
+                                            )
+                                    td 
+                                        input(
+                                            type='button'
+                                            class = "btn btn-primary"
+                                            value = "검사3"
+                                            onclick= "checkProtein('"+result[i]+"');"
+                                        )
+                                    <input type="hidden" class="form-control" value = #{result[i]}   id="receiver">
+                                    td 
+                                        input(
+                                            type='button'
+                                            class = "btn btn-primary"
+                                            value = "Send"
+                                            onclick= "popup2('"+result[i]+"');"
+                                            )
+                                    td 
+                                        input(
+                                            type='button'
+                                            class = "btn btn-primary"
+                                            value = "SetReceiver"
+                                            onclick= "popup1('"+result[i]+"');"
+                                            )
+                                    td 
+                                        input(
+                                            type='button'
+                                            class = "btn btn-primary"
+                                            value = "Discard"
+                                            onclick= "discard('"+result[i]+"');"
+                                            )
+                                    -}											
+                            -}
+                            
+                            
+            <script type="text/javascript" src="/js/sha1.min.js"></script>
+            <script type="text/javascript" src="/js/jquery.min.js"></script>
+            <script type="text/javascript" src="/js/socket.io.min.js"></script>
+            <script type="text/javascript" src="/js/main.js"></script>                            
+                        
+                        
+                        
+                script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+                script(src="http://bootstrapk.com/dist/js/bootstrap.min.js")
+                script(src="http://bootstrapk.com/assets/js/vendor/holder.js")
+                script(src="http://bootstrapk.com/assets/js/ie10-viewport-bug-workaround.js") 
+                script.
+                                    function popup1(){
+                                                    var settings = 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=550, height=500';
+                                                    window.open("/bloodplus?"+arguments[0], "title", settings);   
+                                                    }
+                script.
+                                    function popup2(){
+                                                    var bloodId = document.getElementById('owner'+arguments[0]).value;
+                                                    var receiver = document.getElementById('receiver').value;
+                                                    receiver = prompt("Enter Receiver:");
+                                                    sendBlood(bloodId,receiver);
+                                                    }

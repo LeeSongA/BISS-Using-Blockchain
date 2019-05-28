@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta property="og:title" content="Project">
+	<meta property="og:description" content="Ajou University">	
+	<meta property="og:image" content="img/favicon.png">
+	<title>Project</title>
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
+	<link href="css/main.css?ver=1.3" rel="stylesheet" type="text/css"/>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+	<script type='text/javascript' src='js/jsencrypt.min.js'></script>
+	<script type='text/javascript' src='js/home.js?ver=1.7'></script>
+	<script type="text/javascript" src="js/main.js"></script>  
+	script.
+		function selectMenu(number){
+			var name = '#{name}';
+			if(name == '') alert('Please login first!');
+			else{
+				hideMain(number);
+				if(number == 1) {
+					if(name == 'Redcross' || name =='Hospital') $("#div_contents").load("bloodlist");
+					else alert('unauthorized');
+				}else if(number ==2) {
+					if(name =='Redcross') $("#div_contents").load("bloodregister");
+					else alert('unauthroized');
+				}else if(number ==3) {
+					$("#div_contents").load("myblood");
+				}
+			}
+		}
+
+</head>
+<body>
+	<div id="div_background">
+		<img id="img_wall" src="img/wall.jpg"/>
+		<div id="div_hello">
+			<div>
+				<span>Project</span><br>
+				<span></span>
+			</div>
+		</div>
+		<div id="div_contents"></div>
+	</div>
+	<div id="div_home">
+		<img id="img_logo" src="img/logo.png">
+	</div>
+	<div id="div_menu">
+		<div id="div_menuList">
+			<a><span>전체 혈액</span></a>
+			<a><span>혈액 등록</span></a>
+			<a><span>My 혈액</span></a>
+		</div>
+		<div id="div_shortcutList">
+			-if(name == null){
+			<a><img id="img_login" src="img/login.png"/></a>
+			-}else{
+			<span>#{name}</span>
+			<a><img id="img_logout" src="img/logout.png"/></a>
+			-}
+			<a><img src="img/git.png"/></a>
+		</div>
+	</div>
+	<div id="div_mask"></div>
+	<div id="div_login">
+		<div>
+			<a href="javascript:close(1)">X</a>
+		</div>
+		<div>Log in</div>
+		<hr>
+		<div>
+			div
+				span Account 
+				<input type="text" name="ID" id="ID" placeholder="&nbsp;Account를 입력하세요" value="">
+			div
+				span Password 
+				<input type="password" name="PWD" id="PWD" placeholder="&nbsp;PASSWORD를 입력하세요">
+		</div>
+		<div onclick="javascript:checkLogin();"><span>로그인</span></div>
+		<div></div>
+		<div onclick="javascript:join();">
+			<img src="img/join.png"/>
+			<span>권한 등록</span>
+		</div>
+	</div>
+	<div id="div_join">
+		<div>
+			<a href="javascript:close(2)">X</a>
+		</div>
+		<div>regist authority</div>
+		<hr>
+		<div>
+			<center>
+				<span>Account</span>　　
+				<input type="text" name="ID" id="ID">
+			</center>
+			<center>
+				<span>Password </span>　 
+				<input type="password" name="PWD" id="PWD">
+			</center><br>
+			<center>
+				<input type="radio" name="HID" value="redcross" checked> redcross
+				<input type="radio" name="HID" value="hospital"> hospital 
+			</center>
+			<a>
+				<div id="div_registAuth">등록하기</div>
+			</a>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title BUB
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+    link(href="http://bootstrapk.com/examples/dashboard/dashboard.css", rel="stylesheet")
+    style.
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f5f5f5;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #337AB7;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {background-color: #F5F5F5}
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+  body
+    nav(class="navbar navbar-inverse navbar-fixed-top")
+      div(class="container-fluid")
+        div(class="navbar-header")
+          button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
+            span(class="sr-only") Toggle navigation
+            span(class="icon-bar")
+            span(class="icon-bar")
+            span(class="icon-bar")
+          a(class="navbar-brand", href="/myblood") BUB
+
+    div(class="container-fluid")
+            div(class="col-sm-15 col-sm-offset-0 col-md-10 col-md-offset-0 main")
+                
+
+                h2(class="header") Blood Info
+                div(class="table-responsive")
+                    form(method="get", action='/bloodinfo')
+
+                        table(class="table table-striped", align="center", style="table-layout:fixed")
+                            tr(align="center")
+                                th
+                                    b Data
+                                th
+                                    b Temperature
+                                th
+                                    b Location
+                                tr
+                                    td
+                                        textarea(
+                                            id = 'data'
+                                            type='text'
+                                            rows="14"
+                                            cols="50"
+                                            class = "form-control"
+                                            placeholder = Data
+                                            readonly
+                                            style = "resize: none;"
+                                            )
+                                    td  
+                                        textarea(
+                                            id = 'temperature'
+                                            type='text'
+											rows="14"
+                                            cols="50"
+                                            class = "form-control"
+                                            placeholder = Temperature
+                                            readonly
+                                            style = "resize: none;"
+                                            )
+                                    td  
+                                        textarea(
+                                            id = 'location'
+                                            type='text'
+											rows="14"
+                                            cols="50"
+                                            class = "form-control"
+                                            placeholder = Location
+                                            readonly
+                                            style = "resize: none;"
+                                            )
+                                        
+                                tr 
+                                   
+            <script type="text/javascript" src="/js/sha1.min.js"></script>
+            <script type="text/javascript" src="/js/jquery.min.js"></script>
+            <script type="text/javascript" src="/js/socket.io.min.js"></script>
+            <script type="text/javascript" src="/js/main.js"></script>            
+                        
+                script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+                script(src="http://bootstrapk.com/dist/js/bootstrap.min.js")
+                script(src="http://bootstrapk.com/assets/js/vendor/holder.js")
+                script(src="http://bootstrapk.com/assets/js/ie10-viewport-bug-workaround.js")

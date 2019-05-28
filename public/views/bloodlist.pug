@@ -1,0 +1,42 @@
+﻿html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+    link(href="http://bootstrapk.com/examples/dashboard/dashboard.css", rel="stylesheet")      
+    link(href="css/merge.css", rel="stylesheet")                      
+  body
+    div(class="container-fluid")
+
+            div(class="main")
+
+                h2(class="sub-header") 혈액 관리
+                div(class="table-responsive")
+                    form(form ='get' action='bloodlist')
+
+                        table(class="table table-striped", align="center", style="table-layout:fixed")
+                            tr(align="center")
+                                -for(i in result){
+                                tr
+                                    <input type='hidden' value= #{i} id= #{"data"+i}>
+                                    td 
+                                        input(
+                                            type='button'
+                                            class='btn-link'
+                                            value = "blood_"+i
+                                            style = "font-size:14px"
+                                            onclick= "getInfo('"+i+"');"
+                                            )
+                            -}    
+
+                                   
+            <script type="text/javascript" src="/js/sha1.min.js"></script>
+            <script type="text/javascript" src="/js/jquery.min.js"></script>
+            <script type="text/javascript" src="/js/socket.io.min.js"></script>
+            <script type="text/javascript" src="/js/main.js"></script>            
+                        
+                script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+                script(src="http://bootstrapk.com/dist/js/bootstrap.min.js")
+                script(src="http://bootstrapk.com/assets/js/vendor/holder.js")
+                script(src="http://bootstrapk.com/assets/js/ie10-viewport-bug-workaround.js")

@@ -1,0 +1,315 @@
+html{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	font-family:'Montserrat', sans-serif;
+}
+body{ 
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background-color: #000000;
+	font-family:'Montserrat', sans-serif;
+}
+a{
+	color: #fff;
+	text-decoration: none;
+}
+#div_background{
+	position: absolute;
+	left: 0;
+	top: -100%;
+	background: #fff;
+	width: 100%;
+	height: 100%;
+	animation-duration: 1s;
+	animation-delay: 0.5s;
+	animation-name: down;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+#div_background #div_contents{
+	position: absolute;
+	margin: 10px;
+	top: 60px;
+	width: 100%;
+	height: 100%;
+	display: block;
+	overflow-y: auto;
+}
+#div_background #img_wall{
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	animation-duration: 1s;
+	animation-delay: 1.5s;
+	animation-name: fadeIn;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+#div_hello{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: table;
+	opacity: 0;
+	text-align: center;
+	text-shadow: 0px 0px 10px #000000;
+	animation-duration: 1s;
+	animation-delay: 2.5s;
+	animation-name: menuAppear;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+#div_hello div{
+	display: table-cell;
+	vertical-align: middle;
+}
+#div_hello span:nth-of-type(1){
+	font-size: 100pt;
+	color: #fff;
+}
+#div_hello span:nth-of-type(2){
+	font-size: 80pt;
+	color: #E8C59E;
+}
+#div_menu{
+	position: relative;
+	width: 100%;
+	height: 60px;
+	background-color: rgba(0,0,0,0.7);
+	text-align: center;
+	z-index: 0;
+}
+#div_menuList {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	float: left;
+	color: #fff;
+	line-height: 60px;
+	font-size: 15pt;	
+	opacity: 0;
+	z-index: 0;
+	animation-duration: 1s;
+	animation-delay: 2s;
+	animation-name: menuAppear;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+#div_menuList span{ margin: 0px 20px 0 20px; }
+#div_shortcutList {
+	position: absolute;
+	right: 0;
+	float: left;
+	height: 60px;
+	line-height: 60px;
+	color: #fff;
+	opacity: 0;
+	animation-duration: 1s;
+	animation-delay: 3s;
+	animation-name: fadeIn;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+}
+#div_shortcutList span{
+	margin-right: 10px;
+	font-size: 18px;
+	vertical-align: middle;
+}
+#div_shortcutList img{
+	width: 24px;
+	height: 24px;
+	margin: 0 10px 0 0;
+	vertical-align: middle;
+}
+#img_logo{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100px;
+	height: 100px;
+	margin: -15px 0px 0px -20px;
+	float: left;
+}
+#div_home{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 5;
+}
+#div_mask{  
+	position:absolute;  
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%; 
+	z-index: 999;  
+	background-color: rgba(0,0,0,0);  
+	display:none;  
+}
+#div_login{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 400px;
+	height: 300px;
+	background: #fff;
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+	display: none;
+	z-index: 1000;
+}
+#div_login div:nth-of-type(1){
+	width: 100%;
+	text-align: right;
+}
+#div_login div:nth-of-type(1) a{
+	padding: 5px 10px 0 0;
+	font-weight: bold;
+	color: #ff0000;
+}
+#div_login div:nth-of-type(2){
+	width: 100%;
+	font-size: 20pt;
+	font-weight: bold;
+	text-align: center;
+}
+hr{
+	margin: 10px 10px 20px 10px;
+	color: #b4977a;
+	border-color: #b4977a;
+	background-color: #b4977a;
+}
+#div_login div:nth-of-type(3){
+	float: left;
+	width: 290px;
+}
+#div_login div:nth-of-type(3) div{
+	left: 10px;
+	margin: 0 0 10px 10px;
+	font-weight: normal;
+	font-size: 10pt;
+	text-align: left;
+}
+#div_login div:nth-of-type(3) input{
+	width: 200px;
+	height: 40px;
+}
+#div_login div:nth-of-type(4){
+	float: left;
+	width: 100px;
+	height:100px;
+	background: #6a5a4c;
+	text-align: center;
+	line-height: 100px;
+	cursor: pointer;
+}
+#div_login div:nth-of-type(4) span{
+	color: #fff;
+	vertical-align: middle;
+	font-weight: bold;
+}
+#div_login div:nth-of-type(5){
+	clear: both;
+	height: 20px;
+}
+#div_login div:nth-of-type(6){
+	clear: both;
+	margin: 0 0 0 10px;
+	width: 380px;
+	height: 70px;
+	line-height: 70px;
+	background: #ededed;
+	cursor: pointer;
+}
+#div_login div:nth-of-type(6) img{
+	width: 40px;
+	padding: 15px 10px 15px 10px;
+	vertical-align: middle;
+}
+#div_login div:nth-of-type(6) span{
+	vertical-align: middle;
+	font-size: 9pt;
+	color: #555;
+}
+
+#div_join{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 400px;
+	height: 300px;
+	background: #fff;
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+	display: none;
+	z-index: 1001;
+}
+#div_join div:nth-of-type(1){
+	width: 100%;
+	text-align: right;
+}
+#div_join div:nth-of-type(1) a{
+	padding: 5px 10px 0 0;
+	font-weight: bold;
+	color: #ff0000;
+}
+#div_join div:nth-of-type(2){
+	width: 100%;
+	font-size: 20pt;
+	font-weight: bold;
+	text-align: center;
+}
+#div_join div:nth-of-type(3){
+	float: left;
+}
+#div_join div:nth-of-type(3) center{
+	margin: 0 0 10px 0;
+}
+#div_join div:nth-of-type(3) div{
+	margin: 10px;
+	width: 380px;
+	height:60px;
+	background: #6a5a4c;
+	color: #fff;
+	text-align: center;
+	line-height: 60px;
+	cursor: pointer;
+}
+@keyframes down{
+	from	{ top: -100%; }
+	to	{ top: 0; }
+}
+@keyframes fadeIn{
+	from	{ opacity: 0; }
+	to	{ opacity: 1; }
+}
+@keyframes menuAppear{
+	from { 
+		opacity: 0; 
+		top: 20px;
+	}
+	to { 
+		opacity: 1;
+		top: 0px; 
+	}
+}

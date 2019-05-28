@@ -1,0 +1,14 @@
+html, body{
+	margin: 0;
+	height: 100%;
+}
+#div_textHolder{
+	width: 100%;
+	height: 100%;
+	display: table;
+}	
+#div_textHolder span{
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+}
